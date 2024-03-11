@@ -1,7 +1,7 @@
 {
   "name": "@my-org/is-odd",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "dependencies": {
-    "@my-org/is-even": "0.0.1"
+    "@my-org/is-even": "0.1.0"
   }
 }
