@@ -1,8 +1,0 @@
-{
-  "name": "nx-independent-monorepo",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/nx-independent-monorepo/src",
-  "projectType": "application",
-  "targets": {},
-  "tags": []
-}

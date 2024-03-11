@@ -22,6 +22,46 @@
       }
     },
     {
+      "files": "*.json",
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "@nx/dependency-checks": [
+          "error",
+          {
+            "buildTargets": ["build"], // add non standard build target names
+            "ignoredDependencies": [
+              "execa",
+              "@nx/react",
+              "@testing-library/react",
+              "@testing-library/dom",
+              "@testing-library/user-event",
+              "@storybook/addon-knobs",
+              "@storybook/addon-actions",
+              "@storybook/addons",
+              "enzyme-adapter-react-16",
+              "storybook-addon-react-router-v6",
+              "jest",
+              "jest-mock",
+              "jest-when",
+              "enzyme"
+            ], // these libs will be omitted from checks
+            "includeTransitiveDependencies": false, // collect dependencies transitively from children
+            "ignoredFiles": [
+              "webpack.config.js",
+              "eslint.config.js",
+              "**/.storybook/**",
+              "**/__tests__/**",
+              "**/fixtures/**",
+              "**/apps/**"
+            ], // list of files that should be skipped for check
+            "checkMissingDependencies": true, // toggle to disable
+            "checkObsoleteDependencies": false, // toggle to disable
+            "checkVersionMismatches": true // toggle to disable
+          }
+        ]
+      }
+    },
+    {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
       "rules": {}

@@ -1,0 +1,29 @@
+{
+  "name": "is-odd",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "is-odd/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/is-odd",
+        "tsConfig": "is-odd/tsconfig.lib.json",
+        "project": "is-odd/package.json",
+        "entryFile": "is-odd/src/index.ts",
+        "external": ["react", "react-dom", "react/jsx-runtime"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "is-odd/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

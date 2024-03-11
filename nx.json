@@ -11,6 +11,16 @@
     ],
     "sharedGlobals": []
   },
+  "release": {
+    "version": {
+      "conventionalCommits": true
+    },
+    "changelog": {
+      "projectChangelogs": true
+    },
+    "projectsRelationship": "independent",
+    "releaseTagPattern": "{projectName}-{version}"
+  },
   "plugins": [
     {
       "plugin": "@nx/vite/plugin",
@@ -44,6 +54,13 @@
         "style": "css",
         "linter": "eslint"
       }
+    }
+  },
+  "targetDefaults": {
+    "@nx/rollup:rollup": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   }
 }

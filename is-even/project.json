@@ -1,0 +1,29 @@
+{
+  "name": "is-even",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "is-even/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/is-even",
+        "tsConfig": "is-even/tsconfig.lib.json",
+        "project": "is-even/package.json",
+        "entryFile": "is-even/src/index.ts",
+        "external": ["react", "react-dom", "react/jsx-runtime"],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "is-even/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}
